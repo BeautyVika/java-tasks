@@ -1,17 +1,27 @@
 package Task1;
 
 public class Aspirant extends Student {
-    private String scienceWork;
-    public Aspirant(String firstName, String lastName, String group, double averageMark, String scienceWork) {
+    String work;
+    public Aspirant(String firstName, String lastName, String group, double averageMark, String work) {
         super(firstName, lastName, group, averageMark);
-        this.scienceWork = scienceWork;
+        this.work = work;
     }
 
+    public String getWork() {
+        return work;
+    }
+
+    @Override
     public void getScholarship() {
         if(getAverageMark() == 5){
-            System.out.println("2500");
+            System.out.println("Стипендия у " + getFirstName() + " " + + 2500);
         }else {
-            System.out.println("2000");
+            System.out.println("Стипендия у " + getFirstName() + " " + + 2000);
         }
+    }
+    @Override
+    public void printInfo() {
+        System.out.println("Фамилия и имя аспиранта: " + getFirstName() + getLastName() + " группа: " + getGroup()
+                + " средняя оценка: " + getAverageMark() + " работа: " + work);
     }
 }

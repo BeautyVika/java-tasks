@@ -1,8 +1,10 @@
 package Task1;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public class Aspirant extends Student {
     String work;
 
@@ -12,16 +14,16 @@ public class Aspirant extends Student {
     }
 
     @Override
-    public void getScholarship() {
+    public double getScholarship() {
         if(getAverageMark() == 5){
-            System.out.println("Стипендия у " + getFirstName() + " " + + 2500);
+            return 2500;
         }else {
-            System.out.println("Стипендия у " + getFirstName() + " " + + 2000);
+           return 2200;
         }
     }
     @Override
     public void printInfo() {
-        System.out.println("Фамилия и имя аспиранта: " + getFirstName() + getLastName() + " группа: " + getGroup()
+        System.out.println("Фамилия и имя аспиранта: " + getFirstName() + " " + getLastName() + " группа: " + getGroup()
                 + " средняя оценка: " + getAverageMark() + " работа: " + work);
     }
 }

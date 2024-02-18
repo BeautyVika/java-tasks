@@ -43,12 +43,42 @@ public class Task1 {
         System.out.println("After sorting:");
         printStudents(arr);
 
+        student.getScholarship();
+
+        UnivercityService service = new UnivercityService();
+
+        // Добавление студентов
+        service.addStudent(1, "Bob", "Smith", "Group1", 4.5);
+        service.addAspirant(2, "July", "Thomson", "Group2", 5.0, "Science Work");
+        service.addStudent(3, "Tom", "Johnson", "Group3", 3.0);
+
+        System.out.println("Students sorted by average mark:");
+        service.viewAllStudentsSortedByAverageMark();
+
+        System.out.println("Search student by name:");
+        service.searchStudentByFirstName("Tom");
+
+        System.out.println("Search aspirant by work:");
+        service.searchAspirantByWork("Science Work");
+
+        System.out.println("Edit student or aspirant:");
+        service.editStudent(2, "July", "Thomson", "Group2",5.0, "DRT");
+
+        System.out.println("Calculate schoolarship:");
+        service.calculateScholarship(1);
+
+        System.out.println("After delete student:");
+        service.deleteStudent("July", "Thomson");
+
+
     }
     public static void printStudents(Student[] students) {
         for (Student student : students) {
             System.out.println(student.getFirstName() + " " + student.getLastName() +
-                    " (Average Mark: " + student.getAverageMark() + ")");
-            student.getScholarship();
+                    " (Average Mark: " + student.getAverageMark() + ") ");
+            System.out.println("Стипендия у " + student.getFirstName() + " " + student.getScholarship());
         }
     }
+
+
 }

@@ -7,6 +7,7 @@ import lombok.Setter;
 @Setter
 public class Aspirant extends Student {
     String work;
+    final int scholarship = 2500;
 
     public Aspirant(String firstName, String lastName, String group, double averageMark, String work) {
         super(firstName, lastName, group, averageMark);
@@ -16,7 +17,7 @@ public class Aspirant extends Student {
     @Override
     public double getScholarship() {
         if(getAverageMark() == 5){
-            return 2500;
+            return scholarship;
         }else {
            return 2200;
         }

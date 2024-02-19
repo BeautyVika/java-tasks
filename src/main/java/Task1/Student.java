@@ -36,7 +36,7 @@ public class Student implements Comparable<Student>  {
     }
 
     @Override
-    public int compareTo(@NotNull Student o) {
+    public int compareTo(Student o) {
         if (this.averageMark > o.averageMark) {
             return 1;
         } else if (this.averageMark < o.averageMark) {

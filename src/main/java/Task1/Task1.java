@@ -58,15 +58,6 @@ public class Task1 {
         System.out.println("Search student by name:");
         service.searchStudentByFirstName("Tom");
 
-        System.out.println("Search aspirant by work:");
-        service.searchAspirantByWork("Science Work");
-
-        System.out.println("Edit student or aspirant:");
-        service.editStudent(2, "July", "Thomson", "Group2",5.0, "DRT");
-
-        System.out.println("Calculate schoolarship:");
-        service.calculateScholarship(1);
-
         System.out.println("After delete student:");
         service.deleteStudent("July", "Thomson");
 

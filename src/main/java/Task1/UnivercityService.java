@@ -6,7 +6,7 @@ public class UnivercityService {
     private Map<Integer, Student> database;
 
     public UnivercityService() {
-        database = new HashMap<>();
+        database = new HashMap<Integer, Student>();
     }
 
     public void addStudent(int id, String firstName, String lastName, String group, double averageMark) {
@@ -20,19 +20,27 @@ public class UnivercityService {
     }
 
     public void viewAllStudentsSortedByAverageMark() {
-        List<Student> sortedStudents = new ArrayList<>(database.values());
-        sortedStudents.sort(Comparator.comparing(Student::getAverageMark));
-        for (Student student: sortedStudents) {
-            student.printInfo();
-        }
+           database.entrySet().stream().sorted(Map.Entry.comparingByValue())
+                   .forEach(s -> System.out.println(s.getValue()));
+
+
+//        List<Student> sortedStudents = new ArrayList<Student>(database.values());
+//        sortedStudents.sort(Comparator.comparing(Student::getAverageMark));
+//        for (Student student: sortedStudents) {
+//            student.printInfo();
+//        }
     }
 
     public void searchStudentByFirstName(String name) {
-        for (Student student: database.values()){
-            if(student.getFirstName() == name){
-                student.printInfo();
-            }
-        }
+        database.entrySet().stream().filter(s -> s.getValue().getFirstName() == name)
+                .forEach(s -> System.out.println(s.getValue()));
+
+
+//        for (Student student: database.values()){
+//            if(student.getFirstName() == name){
+//                student.printInfo();
+//            }
+//        }
     }
 
     public void searchAspirantByWork(String work) {
@@ -58,13 +66,16 @@ public class UnivercityService {
     }
 
     public void deleteStudent(String firstName, String lastName){
-        List<Student> students = new ArrayList(database.values());
-        for (Student student: students){
-            if(student.getFirstName() == firstName && student.getLastName() == lastName){
-                students.remove(student);
-            }
-            System.out.println(students);
-        }
+        database.entrySet().stream().filter(s -> s.getValue().getFirstName() != firstName && s.getValue().getLastName() != lastName)
+                .forEach(System.out::println);
+
+//        List<Student> students = new ArrayList(database.values());
+//        for (Student student: students){
+//            if(student.getFirstName() == firstName && student.getLastName() == lastName){
+//                students.remove(student);
+//            }
+//            System.out.println(students);
+//        }
     }
 
     public void calculateScholarship(int id) {

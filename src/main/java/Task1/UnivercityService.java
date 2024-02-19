@@ -20,8 +20,8 @@ public class UnivercityService {
     }
 
     public void viewAllStudentsSortedByAverageMark() {
-           database.entrySet().stream().sorted(Map.Entry.comparingByValue())
-                   .forEach(s -> System.out.println(s.getValue()));
+        database.entrySet().stream().sorted(Comparator.comparing(Map.Entry::getValue))
+                .forEach(s -> System.out.println(s.getValue()));
 
 
 //        List<Student> sortedStudents = new ArrayList<Student>(database.values());

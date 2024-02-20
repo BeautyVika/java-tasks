@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class Aspirant extends Student {
     String work;
-    final int scholarship = 2500;
+    private final int scholarship = 2500;
 
     public Aspirant(String firstName, String lastName, String group, double averageMark, String work) {
         super(firstName, lastName, group, averageMark);

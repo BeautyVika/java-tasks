@@ -1,7 +1,10 @@
 package Task1;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.*;
 
+@Slf4j
 public class UnivercityService {
     private Map<Integer, Student> database;
 
@@ -21,26 +24,12 @@ public class UnivercityService {
 
     public void viewAllStudentsSortedByAverageMark() {
         database.entrySet().stream().sorted(Comparator.comparing(Map.Entry::getValue))
-                .forEach(s -> System.out.println(s.getValue()));
-
-
-//        List<Student> sortedStudents = new ArrayList<Student>(database.values());
-//        sortedStudents.sort(Comparator.comparing(Student::getAverageMark));
-//        for (Student student: sortedStudents) {
-//            student.printInfo();
-//        }
+                .forEach(s -> log.info("Student sorted by average mark", Student.class));
     }
 
     public void searchStudentByFirstName(String name) {
         database.entrySet().stream().filter(s -> s.getValue().getFirstName() == name)
                 .forEach(s -> System.out.println(s.getValue()));
-
-
-//        for (Student student: database.values()){
-//            if(student.getFirstName() == name){
-//                student.printInfo();
-//            }
-//        }
     }
 
     public void searchAspirantByWork(String work) {
@@ -69,13 +58,6 @@ public class UnivercityService {
         database.entrySet().stream().filter(s -> s.getValue().getFirstName() != firstName && s.getValue().getLastName() != lastName)
                 .forEach(System.out::println);
 
-//        List<Student> students = new ArrayList(database.values());
-//        for (Student student: students){
-//            if(student.getFirstName() == firstName && student.getLastName() == lastName){
-//                students.remove(student);
-//            }
-//            System.out.println(students);
-//        }
     }
 
     public void calculateScholarship(int id) {

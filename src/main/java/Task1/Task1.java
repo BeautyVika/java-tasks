@@ -61,7 +61,11 @@ public class Task1 {
         System.out.println("After delete student:");
         service.deleteStudent("July", "Thomson");
 
+        System.out.println("After edit student:");
+        service.editStudent(3,"Tom", "Johnson", "Group3", 3.4, "work" );
 
+        System.out.println("After calculate scholarship:");
+        service.calculateScholarship(3);
     }
     public static void printStudents(Student[] students) {
         for (Student student : students) {

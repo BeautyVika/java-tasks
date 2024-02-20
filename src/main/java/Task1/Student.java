@@ -16,7 +16,7 @@ public class Student implements Comparable<Student>  {
     private String lastName;
     private String group;
     private double averageMark;
-    final int  MIN_MARK = 3;
+    private final int  MIN_MARK = 3;
 
     public double getScholarship() {
         if(averageMark >= MIN_MARK){

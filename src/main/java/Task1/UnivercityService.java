@@ -24,7 +24,7 @@ public class UnivercityService {
 
     public void viewAllStudentsSortedByAverageMark() {
         database.entrySet().stream().sorted(Comparator.comparing(Map.Entry::getValue))
-                .forEach(s -> log.info("Student sorted by average mark", Student.class));
+                .forEach(s -> log.info("{}\n", s.getValue()));
     }
 
     public void searchStudentByFirstName(String name) {

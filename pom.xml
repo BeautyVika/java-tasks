@@ -6,7 +6,7 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>3.1.1</version>
-    <relativePath/> <!-- lookup parent from repository -->
+    <relativePath/>
   </parent>
 
   <groupId>jsp_start</groupId>
@@ -76,30 +76,6 @@
       <scope>compile</scope>
     </dependency>
 
-<!--    <dependency>-->
-<!--      <groupId>org.fluentd</groupId>-->
-<!--      <artifactId>fluent-logger</artifactId>-->
-<!--      <version>0.3.4</version>-->
-<!--    </dependency>-->
-
-<!--    <dependency>-->
-<!--      <groupId>com.sndyuk</groupId>-->
-<!--      <artifactId>logback-more-appenders</artifactId>-->
-<!--      <version>1.8.8</version>-->
-<!--    </dependency>-->
-
-<!--    <dependency>-->
-<!--      <groupId>org.apache.logging.log4j</groupId>-->
-<!--      <artifactId>log4j-api</artifactId>-->
-<!--      <version>2.20.0</version>-->
-<!--    </dependency>-->
-
-    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-<!--    <dependency>-->
-<!--      <groupId>org.slf4j</groupId>-->
-<!--      <artifactId>slf4j-api</artifactId>-->
-<!--      <version>2.0.12</version>-->
-<!--    </dependency>-->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
@@ -115,14 +91,6 @@
       <artifactId>log4j-slf4j-impl</artifactId>
       <version>2.14.0</version>
     </dependency>
-
-
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core &ndash;&gt;-->
-<!--    <dependency>-->
-<!--      <groupId>org.apache.logging.log4j</groupId>-->
-<!--      <artifactId>log4j-core</artifactId>-->
-<!--      <version>2.22.0</version>-->
-<!--    </dependency>-->
 
   </dependencies>
 

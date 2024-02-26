@@ -9,10 +9,12 @@ import java.io.Serializable;
 @ToString
 @Getter
 @AllArgsConstructor
-public class Employe implements Serializable {
+public class Employee implements Serializable {
+    static final long serailVersionUID = 2;
     private String name;
+    private String surname;
     private String department;
-    private double salary;
-    private int age;
+    transient double salary;
+//    private int age;
 
 }

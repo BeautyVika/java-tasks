@@ -1,0 +1,7 @@
+What requirements must a class fulfill to be called a JavaBean class?
+— declaration of a class with the public specifier;
+— declaration of a public constructor without parameters (default);
+— declaration of encapsulated fields;
+— declaration of correct getters and setters for each non-static field;
+- the ability to save an entire object - serialization
+Hello
